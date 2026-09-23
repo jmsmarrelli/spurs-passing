@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Beautiful Game, measured</title>
+<meta name="description" content="In the 2014 Finals the Spurs passed the ball until somebody was open and then passed it once more, and the phrase stuck. Ten years on it is the standard example of a certain kind o">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+:root{
+  --surface:#fcfcfb; --raised:#f4f3ef; --ink:#0b0b0b; --ink-2:#43423f; --ink-3:#7d7b74;
+  --rule:#e3e2dc; --accent:#1c5cab; --mark:#eb6834;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --surface:#14140f; --raised:#1e1e18; --ink:#f2f1ec; --ink-2:#c9c7bf; --ink-3:#8d8b83;
+    --rule:#2e2e27; --accent:#7fb0f0; --mark:#f2895a;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--surface); color:var(--ink);
+  font:400 17px/1.62 "Source Sans 3","Source Sans Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-feature-settings:"kern" 1;
+}
+.wrap{max-width:1020px;margin:0 auto;padding:0 22px}
+.bar{border-bottom:1px solid var(--rule);background:var(--surface)}
+.bar .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:baseline;padding-top:16px;padding-bottom:15px}
+.bar .slug{
+  font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:12.5px;letter-spacing:.02em;color:var(--ink-2)
+}
+.bar nav{margin-left:auto;display:flex;gap:18px}
+.bar a{
+  font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:12.5px;color:var(--ink-3);text-decoration:none;border-bottom:1px solid transparent
+}
+.bar a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+main{padding:0 0 96px}
+.col{max-width:700px}
+h1{
+  font-family:Archivo,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight:700;font-size:clamp(30px,5.4vw,46px);line-height:1.08;
+  letter-spacing:-.022em;margin:54px 0 20px;max-width:640px
+}
+h2{
+  font-family:Archivo,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight:600;font-size:22px;line-height:1.24;letter-spacing:-.012em;
+  margin:52px 0 14px;max-width:700px
+}
+h3{font-family:Archivo,"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:600;
+  font-size:18.5px;letter-spacing:-.008em;margin:40px 0 8px}
+p.meta{font-size:14.5px;color:var(--ink-3);margin:-2px 0 16px}
+p.meta a{border-bottom-color:transparent}
+p.meta a:hover{border-bottom-color:currentColor}
+p{margin:0 0 18px;max-width:700px}
+p strong{font-weight:600}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(28,92,171,.32)}
+a:hover{border-bottom-color:currentColor}
+hr{border:0;border-top:1px solid var(--rule);margin:46px 0}
+ul,ol{margin:0 0 18px;padding-left:22px;max-width:700px}
+li{margin:0 0 8px}
+li>p{margin:0 0 8px}
+code{
+  font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:.86em;background:var(--raised);padding:.12em .34em;border-radius:3px
+}
+pre{
+  background:var(--raised);border:1px solid var(--rule);border-radius:5px;
+  padding:15px 17px;overflow-x:auto;margin:0 0 22px;max-width:820px
+}
+pre code{background:none;padding:0;font-size:13px;line-height:1.55}
+em{color:var(--ink-2)}
+.tw{overflow-x:auto;margin:0 0 26px;max-width:980px}
+table{border-collapse:collapse;font-size:14.5px;min-width:100%}
+th,td{padding:7px 15px 7px 0;text-align:left;border-bottom:1px solid var(--rule);white-space:nowrap}
+th{
+  font-family:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  font-size:11.5px;text-transform:uppercase;letter-spacing:.055em;
+  color:var(--ink-3);font-weight:500;border-bottom-color:var(--ink-3);white-space:normal
+}
+td.num{text-align:right;font-variant-numeric:tabular-nums;padding-right:22px}
+th.num{text-align:right;padding-right:22px}
+tbody tr:last-child td{border-bottom:0}
+figure{margin:30px 0 34px;max-width:980px}
+figure img{display:block;width:100%;height:auto;border:1px solid var(--rule);border-radius:4px}
+.foot{border-top:1px solid var(--rule);padding:22px 0 40px}
+.foot .wrap{
+  font-family:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  font-size:11.5px;color:var(--ink-3);display:flex;flex-wrap:wrap;gap:8px 20px
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  h1{margin-top:36px}
+  th,td{padding-right:14px}
+}
+</style>
+</head>
+<body>
+<header class="bar"><div class="wrap"><span class="slug">spurs-passing</span><nav><a href="docs/method.html">method</a><a href="https://github.com/jmsmarrelli/spurs-passing">repository</a><a href="https://jmsmarrelli.github.io/basketball-analytics/">all projects</a></nav></div></header>
+<main><div class="wrap">
+<h1>The Beautiful Game, measured</h1>
+<p>In the 2014 Finals the Spurs passed the ball until somebody was open and then
+passed it once more, and the phrase stuck. Ten years on it is the standard
+example of a certain kind of offense — and, like most things everyone knows, it
+has never had a number attached to it that survives a second look.</p>
+<p>Twenty seasons of play-by-play, 23,832 games, 1,815,113 made field goals,
+2003-04 to 2022-23.</p>
+<p><strong>The volume claim is ordinary. The distribution claim is extraordinary — but
+only once you account for the fact that bad teams look generous for free.</strong></p>
+<hr>
+<h2>What the data can and cannot see</h2>
+<p>An assist is the only piece of passing in the public record. There is no touch
+count, no pass count, no secondary assist, no time of possession. So the whole
+project is an exercise in what can honestly be built from something that thin,
+and there are exactly two things.</p>
+<p><strong>How much of the scoring came off a pass.</strong> The share of made field goals
+carrying an assist.</p>
+<p><strong>How many people did the creating.</strong> The share of a team's assists made by its
+top two passers. Low means the ball found a lot of hands.</p>
+<p>Neither depends on an action-type label or a shot coordinate, which is the point:
+both of those were re-recorded partway through this sample and are unusable
+across it. The assist tag is not. The league's assisted rate sits between 56.3%
+and 60.9% in every season, with no step at any boundary.</p>
+<hr>
+<h2>The obvious objection, and how much it is worth</h2>
+<p>A three is assisted 81-87% of the time and a two about half the time. So a team
+whose made baskets shift to the arc collects assists it did not earn by passing
+more, and over this sample the league's share of made field goals worth three
+doubled.</p>
+<figure><img loading="lazy" alt="Contamination" src="figures/01_contamination.png"></figure>
+<p>So the volume measure prices it out first: each team gets the assisted rate its
+own two-three split predicts at the league's rates for that season, and only the
+residual is read. (The concentration measure below needs no such correction — it
+is a share of a team's own assists, so the shot mix cancels.)</p>
+<p>Then it turns out to be worth almost nothing. Within a season the correlation
+between three-point share and assisted rate is <strong>+0.06</strong>, and pricing the shot
+mix moves a team an average of <strong>2.4 places</strong> in the ranking. The mechanical
+effect is real — a point of three-point share is worth a tenth of a point of
+assisted rate — but the teams that shoot the most threes are also the ones that
+assist least on their twos, and the two very nearly cancel.</p>
+<p>That is worth knowing before anyone builds a correction they do not need. I did
+build it, and I have kept it, because it is the right thing to do and because
+finding out it barely matters is itself the result. It is
+also why the control that <em>does</em> matter is further down.</p>
+<hr>
+<h2>The 2013-14 Spurs, on the volume claim</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th>League rank</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Assisted share of made field goals</td>
+<td class="num"><strong>62.1%</strong></td>
+<td>5th of 30</td>
+</tr>
+<tr>
+<td>What their shot mix predicts</td>
+<td class="num">58.5%</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Above their shot mix</strong></td>
+<td><strong>+3.6 pp</strong></td>
+<td><strong>6th of 30</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>Sixth. A good passing team, in a season with five better ones. If the beautiful
+game means "assisted on more baskets than anybody", it did not happen.</p>
+<hr>
+<h2>The claim that does hold</h2>
+<p>The Spurs argument was never really about volume. It was about the ball not
+stopping anywhere — and that is a different statistic.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th></th>
+<th>2013-14 Spurs</th>
+<th>League average</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tony Parker</td>
+<td>18.9% of the team's assists</td>
+<td></td>
+</tr>
+<tr>
+<td>Manu Ginóbili</td>
+<td class="num">14.1%</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Top two combined</strong></td>
+<td class="num"><strong>33.0%</strong></td>
+<td class="num">42.2%</td>
+</tr>
+</tbody>
+</table></div>
+<p>Third-lowest in the league that season, and the third-most-frequent passer was
+Boris Diaw at 10.8% — a power forward.</p>
+<figure><img loading="lazy" alt="Spurs path" src="figures/02_spurs_path.png"></figure>
+<p>But this measure has a problem, and it is a bad one.</p>
+<figure><img loading="lazy" alt="Quality confound" src="figures/03_quality_confound.png"></figure>
+<p><strong>Distributed creation is mostly a symptom of having nobody worth feeding.</strong> Across
+599 team-seasons, concentration correlates <strong>+0.31</strong> with point differential:
+good teams have somebody good enough to run the offense through. The 2022-23
+Spurs had the worst point differential in the league and spread the ball around
+more than the 2013-14 team did.
+Quoting this number unadjusted produces a leaderboard of bad basketball.</p>
+<p>So condition on being good. Of the 86 team-seasons in twenty years with a point
+differential of +5 or better:</p>
+<figure><img loading="lazy" alt="Among the good" src="figures/04_among_the_good.png"></figure>
+<div class="tw"><table>
+<thead>
+<tr>
+<th></th>
+<th>Point differential</th>
+<th>Top-two share</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>2016-17 Spurs</strong></td>
+<td class="num">+7.2</td>
+<td class="num"><strong>28.9%</strong></td>
+</tr>
+<tr>
+<td><strong>2015-16 Spurs</strong></td>
+<td class="num">+10.9</td>
+<td class="num"><strong>30.3%</strong></td>
+</tr>
+<tr>
+<td>2020-21 Clippers</td>
+<td class="num">+6.2</td>
+<td class="num">31.3%</td>
+</tr>
+<tr>
+<td><strong>2014-15 Spurs</strong></td>
+<td class="num">+6.1</td>
+<td class="num"><strong>31.4%</strong></td>
+</tr>
+<tr>
+<td>2003-04 Pacers</td>
+<td class="num">+5.8</td>
+<td class="num">32.4%</td>
+</tr>
+<tr>
+<td>2021-22 Warriors</td>
+<td class="num">+5.5</td>
+<td class="num">32.6%</td>
+</tr>
+<tr>
+<td><strong>2013-14 Spurs</strong></td>
+<td class="num">+7.7</td>
+<td class="num"><strong>33.0%</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>Four of the twenty most distributed good teams in twenty years are San Antonio,
+and they are four consecutive seasons. Adjusting for team quality directly rather
+than by cutoff, the 2013-14 team ranks <strong>2nd of 599</strong> — behind only the 2008-09
+Rockets, who were doing something similar with a worse record.</p>
+<hr>
+<h2>What was actually unusual</h2>
+<p>Not the peak. Forty-two team-seasons passed more above their shot mix than the
+best any Spurs team managed — the 2009-10 Jazz by more than double — and seven
+have been more distributed in a single season than San Antonio's most
+distributed year.</p>
+<figure><img loading="lazy" alt="Persistence" src="figures/05_persistence.png"></figure>
+<p><strong>Nine seasons in the league's top ten on both measures at once.</strong> Chicago and
+Minnesota have six; nobody else has more than five. The thing that separates San
+Antonio is not that they found this once. It is that they held it through a
+roster turning over from Parker and Ginóbili to Kawhi Leonard to Pau Gasol and
+Dejounte Murray, and the 2017-18 team — the last of the era, with Leonard hurt —
+had the lowest top-two share in the league at <strong>25.2%</strong>, led by a 37-year-old
+center.</p>
+<p>Then Leonard left, and in one season the number went back to ordinary.</p>
+<hr>
+<h2>Why this is worth doing carefully</h2>
+<p>The story here is not the answer, it is the order of the corrections. The
+objection everybody raises — that assisted rate is really a shot-location
+statistic — is correct in mechanism and worth 2.4 places in a ranking. The
+objection nobody raises — that spreading the ball around is what teams do when
+they have nobody to give it to — has a correlation of +0.31 with team quality,
+moves a team a third of a standard deviation for every standard deviation of
+team strength, and inverts the leaderboard.</p>
+<p>Getting that the wrong way round is how a plausible measure becomes a bad one.</p>
+<hr>
+<h2>Running it</h2>
+<pre><code class="language-bash">pip install -r requirements.txt
+python src/run_01_build.py       # 20 seasons of play-by-play -&gt; two small tables
+python src/run_02_beautiful.py   # price it, control it, figures 01-05
+</code></pre>
+<p>Or <code>make all</code>. Stage 1 reads 470 MB of play-by-play and takes about a minute;
+the analysis itself is a couple of seconds.</p>
+<pre><code>src/
+  config.py        paths, seasons, the sample floor
+  passing.py       the two measures, and the shot-mix pricing
+  labels.py        collision-resolving point labels
+  style.py         one place that decides what every figure looks like
+  run_0*.py        the pipeline, in order
+output/            every number quoted above, as CSV
+figures/           five figures, regenerated from scratch by the pipeline
+docs/method.md     longer notes, including what this cannot see
+</code></pre>
+<h2>Data</h2>
+<p>Play-by-play from
+<a href="https://github.com/sportsdataverse/hoopR-data">sportsdataverse/hoopR-data</a>, a
+mirror of ESPN's public feeds. <code>data/README.md</code> has the fetch step and the
+filters, including the one that keeps the All-Star Game out of the rankings.</p>
+<h2>License</h2>
+<p>MIT. See <code>LICENSE</code>.</p>
+</div></main>
+<footer class="foot"><div class="wrap"><span>spurs-passing</span><span>figures and tables regenerated by the pipeline in this repository</span></div></footer>
+</body>
+</html>
