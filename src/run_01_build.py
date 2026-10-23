@@ -109,7 +109,7 @@ def final_scores(pbp: pd.DataFrame, names: dict, season: int) -> pd.DataFrame:
 
     The running score is on every event, so the last event of a game carries the
     result. It is used only as a control - the question is whether distributed
-    passing is a property of good offenses or of teams with nobody good enough
+    passing is a property of good offences or of teams with nobody good enough
     to dominate the ball - so a point differential per game is precise enough
     and needs no possession count.
     """

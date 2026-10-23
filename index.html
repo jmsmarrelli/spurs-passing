@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Beautiful Game, measured</title>
-<meta name="description" content="In the 2014 Finals the Spurs passed the ball until somebody was open and then passed it once more, and the phrase stuck. Ten years on it is the standard example of a certain kind o">
+<title>The Spurs&#x27; assist distribution</title>
+<meta name="description" content="How unusual was San Antonio&#x27;s distribution of credited assists? This study uses public play-by-play from 2003–04 through 2022–23. It examines assisted makes and how concentrated a ">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
 <style>
 :root{
@@ -99,227 +99,59 @@ figure img{display:block;width:100%;height:auto;border:1px solid var(--rule);bor
 </style>
 </head>
 <body>
-<header class="bar"><div class="wrap"><span class="slug">spurs-passing</span><nav><a href="docs/method.html">method</a><a href="https://github.com/jmsmarrelli/spurs-passing">repository</a><a href="https://jmsmarrelli.github.io/basketball-analytics/">all projects</a></nav></div></header>
+<header class="bar"><div class="wrap"><span class="slug">spurs-passing</span><nav><a href="docs/method.html">method</a></nav></div></header>
 <main><div class="wrap">
-<h1>The Beautiful Game, measured</h1>
-<p>In the 2014 Finals the Spurs passed the ball until somebody was open and then
-passed it once more, and the phrase stuck. Ten years on it is the standard
-example of a certain kind of offense — and, like most things everyone knows, it
-has never had a number attached to it that survives a second look.</p>
-<p>Twenty seasons of play-by-play, 23,832 games, 1,815,113 made field goals,
-2003-04 to 2022-23.</p>
-<p><strong>The volume claim is ordinary. The distribution claim is extraordinary — but
-only once you account for the fact that bad teams look generous for free.</strong></p>
-<hr>
-<h2>What the data can and cannot see</h2>
-<p>An assist is the only piece of passing in the public record. There is no touch
-count, no pass count, no secondary assist, no time of possession. So the whole
-project is an exercise in what can honestly be built from something that thin,
-and there are exactly two things.</p>
-<p><strong>How much of the scoring came off a pass.</strong> The share of made field goals
-carrying an assist.</p>
-<p><strong>How many people did the creating.</strong> The share of a team's assists made by its
-top two passers. Low means the ball found a lot of hands.</p>
-<p>Neither depends on an action-type label or a shot coordinate, which is the point:
-both of those were re-recorded partway through this sample and are unusable
-across it. The assist tag is not. The league's assisted rate sits between 56.3%
-and 60.9% in every season, with no step at any boundary.</p>
-<hr>
-<h2>The obvious objection, and how much it is worth</h2>
-<p>A three is assisted 81-87% of the time and a two about half the time. So a team
-whose made baskets shift to the arc collects assists it did not earn by passing
-more, and over this sample the league's share of made field goals worth three
-doubled.</p>
-<figure><img loading="lazy" alt="Contamination" src="figures/01_contamination.png"></figure>
-<p>So the volume measure prices it out first: each team gets the assisted rate its
-own two-three split predicts at the league's rates for that season, and only the
-residual is read. (The concentration measure below needs no such correction — it
-is a share of a team's own assists, so the shot mix cancels.)</p>
-<p>Then it turns out to be worth almost nothing. Within a season the correlation
-between three-point share and assisted rate is <strong>+0.06</strong>, and pricing the shot
-mix moves a team an average of <strong>2.4 places</strong> in the ranking. The mechanical
-effect is real — a point of three-point share is worth a tenth of a point of
-assisted rate — but the teams that shoot the most threes are also the ones that
-assist least on their twos, and the two very nearly cancel.</p>
-<p>That is worth knowing before anyone builds a correction they do not need. I did
-build it, and I have kept it, because it is the right thing to do and because
-finding out it barely matters is itself the result. It is
-also why the control that <em>does</em> matter is further down.</p>
-<hr>
-<h2>The 2013-14 Spurs, on the volume claim</h2>
+<h1>The Spurs' assist distribution</h1>
+<p>How unusual was San Antonio's distribution of credited assists? This study uses public play-by-play from 2003–04 through 2022–23. It examines assisted makes and how concentrated a team's assists are among its leading passers.</p>
+<h2>The 2013–14 reference season</h2>
+<p>Rates below are proportions, and <code>Above mix</code> is the difference from the season's shot-mix baseline. For example, 0.036 corresponds to 3.6 percentage points.</p>
 <div class="tw"><table>
 <thead>
 <tr>
-<th></th>
-<th></th>
-<th>League rank</th>
+<th>Season</th>
+<th>Games</th>
+<th>Assisted rate</th>
+<th>Expected</th>
+<th>Above mix</th>
+<th>Top2</th>
+<th>Rank above</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Assisted share of made field goals</td>
-<td class="num"><strong>62.1%</strong></td>
-<td>5th of 30</td>
-</tr>
-<tr>
-<td>What their shot mix predicts</td>
-<td class="num">58.5%</td>
-<td></td>
-</tr>
-<tr>
-<td><strong>Above their shot mix</strong></td>
-<td><strong>+3.6 pp</strong></td>
-<td><strong>6th of 30</strong></td>
+<td>2013–14</td>
+<td class="num">82</td>
+<td class="num">0.621</td>
+<td class="num">0.585</td>
+<td class="num">0.036</td>
+<td class="num">0.330</td>
+<td class="num">6.000</td>
 </tr>
 </tbody>
 </table></div>
-<p>Sixth. A good passing team, in a season with five better ones. If the beautiful
-game means "assisted on more baskets than anybody", it did not happen.</p>
-<hr>
-<h2>The claim that does hold</h2>
-<p>The Spurs argument was never really about volume. It was about the ball not
-stopping anywhere — and that is a different statistic.</p>
-<div class="tw"><table>
-<thead>
-<tr>
-<th></th>
-<th>2013-14 Spurs</th>
-<th>League average</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Tony Parker</td>
-<td>18.9% of the team's assists</td>
-<td></td>
-</tr>
-<tr>
-<td>Manu Ginóbili</td>
-<td class="num">14.1%</td>
-<td></td>
-</tr>
-<tr>
-<td><strong>Top two combined</strong></td>
-<td class="num"><strong>33.0%</strong></td>
-<td class="num">42.2%</td>
-</tr>
-</tbody>
-</table></div>
-<p>Third-lowest in the league that season, and the third-most-frequent passer was
-Boris Diaw at 10.8% — a power forward.</p>
-<figure><img loading="lazy" alt="Spurs path" src="figures/02_spurs_path.png"></figure>
-<p>But this measure has a problem, and it is a bad one.</p>
-<figure><img loading="lazy" alt="Quality confound" src="figures/03_quality_confound.png"></figure>
-<p><strong>Distributed creation is mostly a symptom of having nobody worth feeding.</strong> Across
-599 team-seasons, concentration correlates <strong>+0.31</strong> with point differential:
-good teams have somebody good enough to run the offense through. The 2022-23
-Spurs had the worst point differential in the league and spread the ball around
-more than the 2013-14 team did.
-Quoting this number unadjusted produces a leaderboard of bad basketball.</p>
-<p>So condition on being good. Of the 86 team-seasons in twenty years with a point
-differential of +5 or better:</p>
-<figure><img loading="lazy" alt="Among the good" src="figures/04_among_the_good.png"></figure>
-<div class="tw"><table>
-<thead>
-<tr>
-<th></th>
-<th>Point differential</th>
-<th>Top-two share</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>2016-17 Spurs</strong></td>
-<td class="num">+7.2</td>
-<td class="num"><strong>28.9%</strong></td>
-</tr>
-<tr>
-<td><strong>2015-16 Spurs</strong></td>
-<td class="num">+10.9</td>
-<td class="num"><strong>30.3%</strong></td>
-</tr>
-<tr>
-<td>2020-21 Clippers</td>
-<td class="num">+6.2</td>
-<td class="num">31.3%</td>
-</tr>
-<tr>
-<td><strong>2014-15 Spurs</strong></td>
-<td class="num">+6.1</td>
-<td class="num"><strong>31.4%</strong></td>
-</tr>
-<tr>
-<td>2003-04 Pacers</td>
-<td class="num">+5.8</td>
-<td class="num">32.4%</td>
-</tr>
-<tr>
-<td>2021-22 Warriors</td>
-<td class="num">+5.5</td>
-<td class="num">32.6%</td>
-</tr>
-<tr>
-<td><strong>2013-14 Spurs</strong></td>
-<td class="num">+7.7</td>
-<td class="num"><strong>33.0%</strong></td>
-</tr>
-</tbody>
-</table></div>
-<p>Four of the twenty most distributed good teams in twenty years are San Antonio,
-and they are four consecutive seasons. Adjusting for team quality directly rather
-than by cutoff, the 2013-14 team ranks <strong>2nd of 599</strong> — behind only the 2008-09
-Rockets, who were doing something similar with a worse record.</p>
-<hr>
-<h2>What was actually unusual</h2>
-<p>Not the peak. Forty-two team-seasons passed more above their shot mix than the
-best any Spurs team managed — the 2009-10 Jazz by more than double — and seven
-have been more distributed in a single season than San Antonio's most
-distributed year.</p>
-<figure><img loading="lazy" alt="Persistence" src="figures/05_persistence.png"></figure>
-<p><strong>Nine seasons in the league's top ten on both measures at once.</strong> Chicago and
-Minnesota have six; nobody else has more than five. The thing that separates San
-Antonio is not that they found this once. It is that they held it through a
-roster turning over from Parker and Ginóbili to Kawhi Leonard to Pau Gasol and
-Dejounte Murray, and the 2017-18 team — the last of the era, with Leonard hurt —
-had the lowest top-two share in the league at <strong>25.2%</strong>, led by a 37-year-old
-center.</p>
-<p>Then Leonard left, and in one season the number went back to ordinary.</p>
-<hr>
-<h2>Why this is worth doing carefully</h2>
-<p>The story here is not the answer, it is the order of the corrections. The
-objection everybody raises — that assisted rate is really a shot-location
-statistic — is correct in mechanism and worth 2.4 places in a ranking. The
-objection nobody raises — that spreading the ball around is what teams do when
-they have nobody to give it to — has a correlation of +0.31 with team quality,
-moves a team a third of a standard deviation for every standard deviation of
-team strength, and inverts the leaderboard.</p>
-<p>Getting that the wrong way round is how a plausible measure becomes a bad one.</p>
-<hr>
-<h2>Running it</h2>
-<pre><code class="language-bash">pip install -r requirements.txt
-python src/run_01_build.py       # 20 seasons of play-by-play -&gt; two small tables
-python src/run_02_beautiful.py   # price it, control it, figures 01-05
+<p>Source: <a href="output/spurs_path.csv">spurs_path.csv</a>.</p>
+<figure><img loading="lazy" src="figures/02_spurs_path.png" alt="San Antonio's historical assist profile" /></figure>
+<p>The Spurs' top-two share of assists was low relative to other successful teams. That is a statement about credited assists, not all passes or all creation. The <a href="output/team_seasons.csv">full team-season table</a> retains the comparison population and quality-adjusted associations.</p>
+<h2>Method</h2>
+<p>Expected assisted-make share weights league two-point and three-point assisted rates by each team's made-shot mix. Assist concentration is the top two players' share of the team's credited assists. Descriptive comparisons condition on scoring margin because concentration and team quality are associated in this sample.</p>
+<figure><img loading="lazy" src="figures/04_among_the_good.png" alt="Assist distribution among teams with strong scoring margins" /></figure>
+<p>Conditioning on team quality does not isolate a causal passing system. The data omit secondary assists, potential assists, failed passes and unconverted opportunities. The distribution also changes with minutes and player availability. Stable aggregate rates do not independently establish consistent scorekeeping across every arena and season.</p>
+<h2>Front office implications</h2>
+<p>This can identify teams for a study of distributed creation. A useful film follow-up would distinguish advantage-creating passes from routine final passes before made baskets. Those possessions have not been coded here, so the project does not recommend a scheme or player acquisition from assist concentration alone.</p>
+<h2>Reproduce</h2>
+<p>The historical analysis used Python 3.12 with the pinned dependencies below. From this repository:</p>
+<pre><code class="language-bash">python3.12 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+make fetch-data PY=python
+make all PY=python
+make report site PY=python
 </code></pre>
-<p>Or <code>make all</code>. Stage 1 reads 470 MB of play-by-play and takes about a minute;
-the analysis itself is a couple of seconds.</p>
-<pre><code>src/
-  config.py        paths, seasons, the sample floor
-  passing.py       the two measures, and the shot-mix pricing
-  labels.py        collision-resolving point labels
-  style.py         one place that decides what every figure looks like
-  run_0*.py        the pipeline, in order
-output/            every number quoted above, as CSV
-figures/           five figures, regenerated from scratch by the pipeline
-docs/method.md     longer notes, including what this cannot see
-</code></pre>
-<h2>Data</h2>
-<p>Play-by-play from
-<a href="https://github.com/sportsdataverse/hoopR-data">sportsdataverse/hoopR-data</a>, a
-mirror of ESPN's public feeds. <code>data/README.md</code> has the fetch step and the
-filters, including the one that keeps the All-Star Game out of the rankings.</p>
-<h2>License</h2>
-<p>MIT. See <code>LICENSE</code>.</p>
+<p><code>make all</code> verifies source hashes before running the analyses in order. A missing or changed input stops the build. Data downloads need network access; article rendering uses the included result tables. See <a href="data/source_manifest.json">the source manifest</a>, <a href="docs/method.md">method notes</a> and <a href="VALIDATION_CURRENT.md">current validation record</a> for the distinction between a source rebuild and checks of delivered outputs.</p>
+<p>Season keys in CSV files use the <strong>ending year</strong>: <code>2025</code> means 2024–25. Display tables use full season labels. The MIT license covers code; third-party data retain their providers' rights and terms.</p>
+<p><a href="https://github.com/jmsmarrelli/basketball-analytics">Portfolio</a> · <a href="PROVENANCE.md">AI assistance and provenance</a></p>
+
 </div></main>
-<footer class="foot"><div class="wrap"><span>spurs-passing</span><span>figures and tables regenerated by the pipeline in this repository</span></div></footer>
+<footer class="foot"><div class="wrap"><span>spurs-passing</span><span>source, results and validation notes in the repository</span></div></footer>
 </body>
 </html>
