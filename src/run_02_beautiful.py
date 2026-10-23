@@ -199,7 +199,7 @@ def fig_spurs_path(d: pd.DataFrame) -> None:
     ax2.set_title("And who was doing it", loc="left", fontsize=11)
     S.strip(ax2)
 
-    S.caption(fig, "Two different things happened to San Antonio's offense. It started passing "
+    S.caption(fig, "Two different things happened to San Antonio's offence. It started passing "
                    "slightly more than its shot chart called for around 2012-13, and it kept "
                    "that up for six seasons. Underneath, the creation spread out for a decade "
                    "and then snapped back when Kawhi Leonard's last season ended the era.")
@@ -268,7 +268,7 @@ def fig_among_good(good: pd.DataFrame) -> None:
     S.strip(ax, keep=("bottom",))
     ax.tick_params(axis="y", labelsize=8.8)
     ax.set_xlabel("Share of assists made by the team's top two passers")
-    ax.set_title("The twenty most distributed offenses among teams that were actually good",
+    ax.set_title("The twenty most distributed offences among teams that were actually good",
                  loc="left")
     n_sa = int((d["team"] == TEAM).sum())
     S.caption(fig, f"Restricted to the {len(good)} team-seasons in twenty years with a point "

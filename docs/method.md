@@ -1,5 +1,8 @@
 # Method notes
 
+This study uses historical assist events through 2022–23. Assists are a limited proxy for passing: they omit unconverted opportunities, secondary passes and most off-ball decisions. Descriptive concentration and adjusted associations do not identify a causal effect of a passing system.
+
+
 The two measures, the corrections in the order they mattered, and what an assist
 cannot tell you.
 
@@ -47,7 +50,7 @@ season, so the twenty-year drift in three-point volume never enters a comparison
 
 The mechanism is real and the magnitude is not, because the two halves cancel:
 the teams that take the most threes are also the teams that assist least on their
-twos — isolation-heavy offenses that generate their threes off drives and their
+twos — isolation-heavy offences that generate their threes off drives and their
 twos off nothing. Anyone building this measure should still price the mix, and
 should not expect it to change their mind.
 
@@ -60,13 +63,13 @@ alternatives were tried first.
 the standard measure. It is wrong here. It
 counts the tail, so a team that used twenty-seven players in a season scores as
 egalitarian for reasons that have nothing to do with how it played. Under that
-measure the five most distributed offenses of the last twenty years are the
+measure the five most distributed offences of the last twenty years are the
 2021-22 Trail Blazers, the 2020-21 Magic, the 2018-19 Knicks, the 2021-22 Pacers
 and the 2014-15 Knicks — five teams with a combined point differential of −40 a
 game and enormous roster churn. It is carried in `output/team_seasons.csv` as
 `eff_assisters` so the comparison is visible rather than asserted.
 
-**The leading passer's share alone.** Cleaner, but it treats a two-guard offense
+**The leading passer's share alone.** Cleaner, but it treats a two-guard offence
 as concentrated only if one of the two guards dominates. Two is the number that
 matches the claim being tested, which is about the ball not stopping in a
 particular pair of hands.
@@ -78,8 +81,8 @@ denominator problem above, because both are shares of a team's own assists.
 
 Concentration is not independent of quality. Across 599 team-seasons it
 correlates **+0.31** with point differential: good teams have somebody good
-enough to run the offense through, and bad teams do not. Read unadjusted, "most
-distributed offense" is a leaderboard of bad basketball.
+enough to run the offence through, and bad teams do not. Read unadjusted, "most
+distributed offence" is a leaderboard of bad basketball.
 
 Two ways of handling it are reported, deliberately, because they answer slightly
 different questions.
@@ -88,8 +91,8 @@ different questions.
 better and rank within that. This is the version to quote, because "good teams
 that also did this" is the claim being made about San Antonio.
 
-**Adjust for quality.** Regress within-season standardized concentration on
-within-season standardized point differential and read the residual. Slope +0.33
+**Adjust for quality.** Regress within-season standardised concentration on
+within-season standardised point differential and read the residual. Slope +0.33
 SD per SD. This ranks all 599 and puts the 2013-14 Spurs 2nd, but it also lets a
 mediocre team score highly for being unusually distributed *for a mediocre team*,
 which is not the same claim.
@@ -121,9 +124,9 @@ them.
 team that generated wide-open looks and missed them is not distinguishable from
 one that did not generate them.
 
-**An assist is a scorer's judgment.** Different scorekeepers have different
+**An assist is a scorer's judgement.** Different scorekeepers have different
 thresholds for what counts as "directly leading to" a basket, and this project
-takes twenty seasons of that judgment at face value. The stability of the league
+takes twenty seasons of that judgement at face value. The stability of the league
 rate across the sample is reassuring about drift over time; it says nothing about
 consistency between buildings on a given night.
 
